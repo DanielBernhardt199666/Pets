@@ -1,0 +1,10 @@
+package se.Nackademin;
+//--------------------------------------Interface-------------------------------------
+public interface IDiet {
+
+    // Interface med en metod som de andra klasserna kommer anv senare, och @Override dens metod.
+
+
+    void diet(Djur djur);
+
+}
