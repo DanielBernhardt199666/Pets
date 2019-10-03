@@ -1,0 +1,27 @@
+package se.Nackademin;
+
+import javax.swing.*;
+// --------------------------------Arv------------------------------
+public class Katt extends Djur {
+    // använder superklassens variabler namn och vikt genom o skriva super.
+    protected Katt(String namn, int vikt) {
+        super(namn, vikt);
+    }
+
+    // implements diet ifrån IDiet interface, overrides, sedan delar djurets vikt på 150, för att få fram hur mycket kattfoder katter ska få.
+
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public void diet(Djur djur) {
+        int kattFoder = djur.vikt / 150;
+        JOptionPane.showMessageDialog(null, "Kattfoder: " + kattFoder + " i gram");
+    }
+
+    // toString metod för att returnera i String format.
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public String toString() {
+        return this.namn;
+    }
+}
+
