@@ -1,0 +1,27 @@
+package se.Nackademin;
+
+import javax.swing.*;
+// --------------------------------Arv------------------------------
+public class Hund extends Djur {
+    // använder superklassens variabler namn och vikt genom o skriva super.
+    protected Hund(String namn, int vikt){
+        super(namn, vikt);
+    }
+
+    // Använder metoden från Idiet, Tar hundens vikt man skriver in i main senare o delar med 100.
+
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public void diet(Djur djur){
+        int hundFoder = djur.vikt / 100;
+        JOptionPane.showMessageDialog(null, "Hundfoder: " + hundFoder + " gram");
+
+    }
+    // toString metod för att accessa/nå och returnera i String format.
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public String toString(){
+        return this.namn;
+    }
+
+    }
