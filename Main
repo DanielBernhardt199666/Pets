@@ -1,0 +1,51 @@
+package se.Nackademin;
+
+import javax.swing.*;
+
+public class Main {
+    public static void fleraDjur() {
+
+        // Skapar flera objekt av dem olika djuren och bestämmer deras namn samt vikt i gram.
+
+        Hund dogge = new Hund("Dogge", 5000);
+        Hund sixten = new Hund("Sixten", 1000);
+        Katt venus = new Katt("Venus", 5000);
+        Katt ove = new Katt("Ove", 3000);
+        Orm hypno = new Orm("Hypno", 1000);
+
+        // Skapar en dialogruta som frågar vilket djur som ska ha mat. input är av typen String som används när vi senare ska jämföra med .equals
+
+        String input = JOptionPane.showInputDialog("Vilket djur ska ha mat?");
+
+        // try catch för o fånga fel.
+        // Använder boolean .equals(str) är sann ifall input strängen är av samma teckensekvens som str. dvs de man skrivit som namn för djuret.
+        // Sedan skriver man t.ex. dogge som är hundobjektet dogge. Sedan diet som är metoden som bestämmer hur mycket mat. Sedan dogge igen för o ge dogge diet uträkningen.
+
+        try {
+            if (input.equals(dogge.toString()))
+                dogge.diet(dogge);
+            else if (input.equals(sixten.toString()))
+                sixten.diet(sixten);
+            else if (input.equals(venus.toString()))
+                venus.diet(venus);
+            else if (input.equals(ove.toString()))
+                ove.diet(ove);
+            else if (input.equals(hypno.toString()))
+                hypno.diet(hypno);
+            else // Felmeddelande ifall man stavar fel eller skriver fel.
+                JOptionPane.showMessageDialog(null, "Vänligen skriv ett namn från listan: \nDogge\nSixten\nVenus\nOve\nHypno");
+
+            // Ifall användaren klickar avbryt så avbryts programmet med felmeddelandet "Avbrutet program" och det avslutas med exit code 0.
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Avbrutet program");
+            System.exit(0);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        // printar metoden fleraDjur();
+        fleraDjur();
+    }
+
+}
