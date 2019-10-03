@@ -1,0 +1,28 @@
+package se.Nackademin;
+
+import javax.swing.*;
+// --------------------------------Arv------------------------------
+public class Orm extends Djur {
+    // använder superklassens variabler namn och vikt genom o skriva super.
+    public Orm(String namn, int vikt) {
+        super(namn, vikt);
+    }
+
+    // implements diet ifrån IDiet interface, overrides, sedan bestämmer man att den ska få 20 ormpellets oavsett vikt.
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public void diet(Djur djur) {
+        int ormPellets = 20;
+        JOptionPane.showMessageDialog(null, "Ormpellets: " + ormPellets + " gram");
+    }
+
+    // toString metod för att returnera i String format.
+    // ------------------------- Polymorphism --------------------------------
+    @Override
+    public String toString() {
+        return this.namn;
+    }
+
+
+}
+
