@@ -1,0 +1,17 @@
+package se.Nackademin;
+
+// superklass, bestämmer variabler som andra klasser kommer använda sig av.
+abstract class Djur implements IDiet {
+
+    // Två instansvariabler som är protected, dvs dem kan bara accessas inom givet package. Andra klasser når dessa genom o skriva super, eftersom detta är en superklass.
+    protected String namn;
+    protected int vikt;
+
+
+    // Constructor för Djurklassen, denna kommer kallas i dem andra klasserna.
+    protected Djur(String namn, int vikt) {
+        this.namn = namn;
+        this.vikt = vikt;
+    }
+}
+
